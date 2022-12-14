@@ -1,4 +1,4 @@
-import Base_url from "../../constants/api/Base_url"
+import { API } from '../../constants/api';
 import { useState, useEffect } from 'react'
 import { json } from 'react-router-dom';
 
@@ -9,23 +9,39 @@ function Postlist() {
 
     useEffect(() => {
         async function getPost(){
-          const response = await fetch(Base_url);
+          try {
+            const response = await fetch(API);
 
-          if(response.ok){
-            const results = await response.json();
-            console.log(results);
-            setPost(json)
+            if(response.ok){
+              const results = await response.json();
+              console.log(results);
+              setPost(json) 
+            } else {
+              setError("An error occured")
+            }
+          }catch(error){
+            console.log(error)
+          }finally{
+            setLoading(false)
           }
-          
-
         }
         getPost()
-    })
+    },[]);
+
+    if(loading){
+      return <div>Loading....</div>
+    }
+
+  if (error) {
+    return <div>Error: An error occured....</div>
+  }
 
   return (
-    <div>
-
-    </div>
+    <>
+      {post.map(function(post){
+        return <div key={post.id}>{post.slug}</div>
+      })}
+    </>
   )
 }
 
