@@ -1,0 +1,1 @@
+export const Base_url = "https://willyongaks.com/kenya_safari/wp-json/wp/v2/posts?consumer_key=ck_d1204c1e15fa067205d203ec627326093eb9d984&consumer_secret=ck_d1204c1e15fa067205d203ec627326093eb9d984";
