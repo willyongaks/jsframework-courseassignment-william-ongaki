@@ -13,6 +13,7 @@ function Postlist() {
 
         if (response.ok) {
           const results = await response.json();
+          console.log(results)
           setPost(results);
         } else {
           setError("An error occured");
@@ -36,7 +37,7 @@ function Postlist() {
 
   return (
     <div>
-      {post.map(post => <div key={post.id}>{post.slug}</div>)}
+      {post.map(post => <div key={post.id}>{post.title.rendered}</div>)}
     </div>
   );
 }
