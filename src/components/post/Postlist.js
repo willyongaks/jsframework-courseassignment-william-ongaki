@@ -19,6 +19,8 @@ function Postlist() {
         }
       } catch (error) {
         console.log(error);
+      }finally{
+        setLoading(false)
       }
     }
     getPost();
@@ -34,7 +36,7 @@ function Postlist() {
 
   return (
     <div>
-      {post.map(post => <div key={post.id}>`&{post.slug}`</div>)}
+      {post.map(post => <div key={post.id}>{post.slug}</div>)}
     </div>
   );
 }
