@@ -1,12 +1,13 @@
 // colors and font sizes
 $white: rgba(255, 255, 255, 0.8);
 $black: rgba(0, 0, 0, 0.8);
-$font-size: 30px;
+$font-size-paragraph: 16px;
+$font-size-heading: 30px;
+$font-size-sub-heading: 20px;
 
 // mixin for common styles
 @mixin post-card-styles {
   background-color: $white;
-  font-size: $font-size;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -19,25 +20,27 @@ $font-size: 30px;
 .post-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+
+  @media (max-width: 767px) {
+      .post-container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .post-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 }
 .post-title{
-  font-size: $font-size;
+  font-size: $font-size-sub-heading;
+  
 }
 
 .post-image{
   width: calc(105% - 20px);
   height: 200px;
   object-fit: cover;
-}
-
-@media (max-width: 767px) {
-  .post-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .post-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
