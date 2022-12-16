@@ -12,6 +12,7 @@ import {
 import Home from "../pages/home/Home";
 import Contact from "../pages/contact/Contact";
 import Login from "../pages/login/Login";
+import RegistrationPage from '../pages/login/register';
 
 function Layout() {
     return (
@@ -33,6 +34,7 @@ function Layout() {
                     <Route path="/" exact element={<Home />}/>
                     <Route path="/contact" element={<Contact />}/>
                     <Route path="/login" element={<Login />}/>
+                    <Route path="/register" component={<RegistrationPage />} />
                 </Routes>
             </Container>
         </Router >

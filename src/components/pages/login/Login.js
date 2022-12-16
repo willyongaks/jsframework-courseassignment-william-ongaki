@@ -1,8 +1,12 @@
 import React from 'react'
+import LoginPage from '.'
+import "./loginpage.scss"
 
 function Login() {
   return (
-    <div>Login</div>
+    <>
+    <LoginPage />
+    </>
   )
 }
 
