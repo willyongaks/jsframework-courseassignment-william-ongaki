@@ -1,10 +1,10 @@
 import './App.scss';
-
+import Layout from './components/layout/Layout';
 
 function App() {
   return (
     <>
-    <h1>Hello william</h1>
+    <Layout />
     </>
   );
 }
