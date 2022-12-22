@@ -7,6 +7,8 @@ import {
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Home from "../../pages/home/Home";
+import Contact from "../../pages/contact/Contact";
+import Login from "../../pages/login/Login";
 import GameDetails from "../../games/GameDetails";
 import { Container } from "react-bootstrap";
 
@@ -14,12 +16,13 @@ function Menu() {
   return (
     <Router>
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand to="#home">GameSet</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <NavLink href="#home" className="nav-link">Home</NavLink>
-                    <NavLink href="#link" className="nav-link">Link</NavLink>
+                    <NavLink to="/" className="nav-link">Home</NavLink>
+                    <NavLink to="/contact" className="nav-link">Contact</NavLink>
+                    <NavLink to="/login" className="nav-link">Login</NavLink>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
@@ -27,8 +30,8 @@ function Menu() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/details/:id" component={GameDetails} />
-                <Route path="/contact">Contact</Route>
-                <Route path="/login">Login</Route>
+                <Route path="/contact" element={<Contact />}/>
+                <Route path="/login" element={<Login />} />
             </Routes>
         </Container>
     </Router>
