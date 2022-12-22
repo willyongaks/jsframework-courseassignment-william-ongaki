@@ -34,34 +34,3 @@ $button-color: #fff;
 $button-border: none;
 $button-border-radius: 5px;
 $button-cursor: pointer;
-
-.login-form {
-  width: $form-width;
-  margin: $form-margin;
-  border: $form-border;
-  border-radius: $form-border-radius;
-  padding: $form-padding;
-
-  label {
-    display: $label-display;
-    margin-bottom: $label-margin-bottom;
-  }
-
-  input {
-    width: $input-width;
-    padding: $input-padding;
-    border: $input-border;
-    border-radius: $input-border-radius;
-  }
-
-  button {
-    display: $button-display;
-    width: $button-width;
-    padding: $button-padding;
-    background-color: $button-background-color;
-    color: $button-color;
-    border: $button-border;
-    border-radius: $button-border-radius;
-    cursor: $button-cursor;
-  }
-}
