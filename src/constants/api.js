@@ -1,1 +1,3 @@
-export const API = "https://imdb8.p.rapidapi.com/auto-complete?q=game";
+export const API = "https://www.freetogame.com/api/games";
+
+
