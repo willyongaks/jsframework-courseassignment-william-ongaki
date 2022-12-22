@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { API } from "../../constants/api"
 
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '4318904c87mshcf8fcdc984cadc9p1f8d99jsn9790322cce04',
+		'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+	}
+};
 
 
 function GameList() {
@@ -12,7 +19,7 @@ function GameList() {
     useEffect(() => {
         async function fetchGames() {
             try{
-                const response = await fetch(API);
+                const response = await fetch(API , options);
 
                 if(response.ok){
                     const results = await response.json()
@@ -20,7 +27,7 @@ function GameList() {
                     setGames(results);
                 }
             }catch(error){
-                console.log(error)
+                setError()
             }finally{
                 setLoading(false)
             }
@@ -36,7 +43,15 @@ function GameList() {
     }
 
   return (
-    <div>GameList</div>
+    <div>
+        {games.map((game) => {
+            return <div key={game.id}>
+                <h2>{game.title}</h2>
+                <img src={game.thumbnail} alt={game.title} />
+
+            </div>
+        })}
+    </div>
   )
 }
 
